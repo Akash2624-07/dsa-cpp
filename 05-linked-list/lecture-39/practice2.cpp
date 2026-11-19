@@ -81,7 +81,14 @@ int main(){
 
     if(curr!=nullptr){
         Node *temp = new Node(35,nullptr);
-        prev->next = temp;
+        
+        if(prev){
+            prev->next = temp;
+        }
+        else{
+            // prev = temp; Not really needed/
+            Head = prev;
+        }
         temp->next = curr;
         // One line version - prev->next = new Node(35, curr);
     }
